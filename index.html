@@ -87,7 +87,7 @@
 								<th>賣出通路</th>
 							</tr>
 							</thead>
-							<tbody>
+							<tbody id="list-body">
 							<tr>
 								<td>A12345678</td>
 								<td>測試商品A</td>
@@ -196,6 +196,9 @@
 							</tbody>
 						</table>
 					</div>
+					<div class="d-flex justify-content-end align-items-center">
+						<button type="button" class="btn btn-link" id="more">more</button>
+					</div>
 				</div>
 			</div>
 		</main>
@@ -212,3 +215,15 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<script>
+	$("#more").on("click", function() {
+	    var listHtml = '';
+
+	    for (var i = 0; i < 10; i++) {
+	        listHtml += `<tr><td>${i}_O12345678</td><td>測試商品_${i}</td><td>2018-01-01</td><td>2020-06-30</td><td>PCHOME</td></tr>`;
+		}
+
+		listHtml !== '' && $("#list-body").append(listHtml);
+	});
+</script>
